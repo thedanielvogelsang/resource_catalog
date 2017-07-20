@@ -1,0 +1,11 @@
+<h1>Tell us what assets/resources you have...</h1>
+<div class="added_skills">
+<% @sharables.each do |sharable| %>
+ <p><%= sharable.sharable %></p>
+<% end %>
+</div>
+<%= form_for @sharable do |f| %>
+  <%= f.label :sharable, "What physical things might you have to offer?" %>
+  <%= f.text_field :sharable %>
+  <%= f.submit "offer a resource!" %>
+<% end %>

@@ -15,7 +15,6 @@ RSpec.feature "user adds two new skills" do
         expect(current_path).to eq(skills_path)
         expect(page).to have_content "skill 1"
         expect(page).to have_content "skill 2"
-        save_and_open_page
       end
     end
   end

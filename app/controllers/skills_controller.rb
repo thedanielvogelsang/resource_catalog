@@ -4,9 +4,12 @@ class SkillsController < ApplicationController
   end
 
   def create
-    if @skill = Skill.create(skill_params)
+    @skill = Skill.create(skill_params)
+    if @skill
+      flash[:success] = "nice! we didn't know you could do that!"
       redirect_to skills_path
     else
+      flash[:error] = "invalid skill"
       redirect_to new_skill_path
     end
   end
