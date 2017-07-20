@@ -1,0 +1,28 @@
+<%= form_for @user do |f|%>
+
+<%= f.label :first_name %>
+<%= f.text_field :first_name %>
+
+<%= f.label :last_name %>
+<%= f.text_field :last_name %>
+
+<%= f.label :email_address %>
+<%= f.text_field :email %>
+
+<%= f.label :phone_number %>
+<%= f.text_field :phone %>
+
+<%= f.label :address, "Address, City, State" %>
+<%= f.text_field :address %>
+
+<%= f.label :zipcode %>
+<%= f.number_field :zipcode %>
+
+<%= f.label :password %>
+<%= f.text_field :password %>
+<%= f.label :confirm_password %>
+<%= f.text_field :password_confirmation %>
+
+<%= f.submit %>
+
+<% end %>
