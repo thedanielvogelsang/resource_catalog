@@ -1,29 +1,4 @@
-<<<<<<< HEAD
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-=======
 # resource_catalog
 
 This application was inspired by working during the 2016 election cycle in a series of capacities looking to amp up local activism and generate more linkages between election-excitement and grassroots campaigns. One of the reoccurring messages repeated time and again as new and old were drawn back into the political arena was the uncertainty of how 'best' to plug in. Most people seemed to be eager to get involved in varying capacities--some wanting to dive head-first into particular projects; others, unsure of where their passions lie, desiring to sample different issue-based campaigns--however either lacked the connections or direction to result in much follow up. And even for the few that did regularly show up to events, activist climate can sometimes feel more exclusive than inviting--particularly acknowledging that planning sessions and strategy meetings rapidly degenerate as more and more members (particularly and especially those without experience) add themselves to the ranks and wish to have their voice heard. Because of a combination of these factors and many more, we watched as local organizations and campaigns desperate for bodies but not fast enough on the uptake, lost the energy that could have been capitalized upon post election.
