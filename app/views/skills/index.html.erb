@@ -1,5 +1,9 @@
 <h1>Tell us what skills you have...</h1>
-
+<div class="added_skills">
+<% @skills.each do |skill| %>
+ <p><%= skill.skill %></p>
+<% end %>
+</div>
 <%= form_for @skill do |f| %>
   <%= f.label :skill, "What are you good at?" %>
   <%= f.text_field :skill %>

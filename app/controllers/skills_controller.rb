@@ -1,6 +1,6 @@
 class SkillsController < ApplicationController
   def new
-    @skill = Skill.new()
+      @skill = Skill.new()
   end
 
   def create
@@ -11,9 +11,15 @@ class SkillsController < ApplicationController
     end
   end
 
+  def index
+    @skills = Skill.all
+    @skill = Skill.new()
+  end
+
   private
 
     def skill_params
       params.require(:skill).permit(:skill)
     end
+
 end
