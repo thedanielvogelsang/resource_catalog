@@ -8,13 +8,21 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
+<<<<<<< HEAD
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
+=======
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
+>>>>>>> 31756927c95beca6d6d8af5531de9dd7293d434c
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+<<<<<<< HEAD
 gem 'bootstrap-sass', '~> 3.2.0'
+=======
+>>>>>>> 31756927c95beca6d6d8af5531de9dd7293d434c
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -29,7 +37,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
+<<<<<<< HEAD
 gem 'bcrypt', '~> 3.1.7'
+=======
+# gem 'bcrypt', '~> 3.1.7'
+>>>>>>> 31756927c95beca6d6d8af5531de9dd7293d434c
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -41,11 +53,19 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'pry'
+<<<<<<< HEAD
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'database_cleaner'
   gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
+=======
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
+
+>>>>>>> 31756927c95beca6d6d8af5531de9dd7293d434c
 end
 
 group :development do

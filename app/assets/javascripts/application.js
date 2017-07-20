@@ -12,5 +12,8 @@
 //
 //= require rails-ujs
 //= require turbolinks
+<<<<<<< HEAD
 //= require bootstrap-sprockets
+=======
+>>>>>>> 31756927c95beca6d6d8af5531de9dd7293d434c
 //= require_tree .
