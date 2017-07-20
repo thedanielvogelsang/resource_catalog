@@ -1,3 +1,3 @@
 class Skill < ApplicationRecord
-  validates :type, presence: true
+  validates :skill, presence: true
 end

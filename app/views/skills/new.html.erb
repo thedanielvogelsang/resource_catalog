@@ -1,7 +1,13 @@
 <h1>Tell us what skills you have...</h1>
 
+<% if @skills %>
+  <% @skills.each do |skill| %>
+    <%= skill.skill %>
+  <% end %>
+<% end %>
+
 <%= form_for @skill do |f| %>
-<%= f.label :skill, "What are you good at?" %>
-<%= f.text_field :type %>
-<%= f.submit %>
+  <%= f.label :skill, "What are you good at?" %>
+  <%= f.text_field :skill %>
+  <%= f.submit "add a skill!" %>
 <% end %>
