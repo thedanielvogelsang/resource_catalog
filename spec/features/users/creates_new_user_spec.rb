@@ -42,7 +42,7 @@ RSpec.feature "User creates new account" do
       fill_in "Password", with: "thepassword"
       fill_in "user[password_confirmation]", with: "thepassword"
       click_on "Create User"
-      expect(page).to have_content("ComRe-Cat")
+      expect(page).to have_content("Tell us what skills you have...")
       save_and_open_page
     end
   end

@@ -52,10 +52,6 @@ group :development, :test do
   gem 'launchy'
   gem 'database_cleaner'
   gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
-  gem 'database_cleaner'
-  gem 'launchy'
-  gem 'factory_girl_rails'
-  gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
 end
 
 group :development do

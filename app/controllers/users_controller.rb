@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "You're in!"
-      redirect_to :root
+      redirect_to new_skill_path
     else
       flash[:error] = "Unsuccessful User Creation"
       redirect_to new_user_path
