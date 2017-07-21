@@ -1,12 +1,12 @@
 <h1>Tell us what skills you have...</h1>
 <div class="added_skills">
-<% @skills.each do |skill| %>
+<% @user.skills.each do |skill| %>
  <p><%= skill.skill %></p>
 <% end %>
 </div>
-<%= form_for @skill do |f| %>
+<%= form_for [@user, @skill] do |f| %>
   <%= f.label :skill, "What are you good at?" %>
   <%= f.text_field :skill %>
   <%= f.submit "add a skill!" %>
 <% end %>
-<%= link_to "next", new_sharable_path %>
+<%= link_to "next", new_user_sharable_path(@user) %>

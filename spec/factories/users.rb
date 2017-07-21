@@ -6,7 +6,8 @@ FactoryGirl.define do
     email "MyString"
     address "MyText"
     zipcode 1
-    password_digest "MyString"
+    password "MyString"
+    password_confirmation "MyString"
     role 0
   end
 end

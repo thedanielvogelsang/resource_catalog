@@ -9,4 +9,6 @@ class User < ApplicationRecord
                         :password_confirmation
   has_many :user_skills
   has_many :skills, through: :user_skills
+  has_many :user_sharables
+  has_many :sharables, through: :user_sharables
 end

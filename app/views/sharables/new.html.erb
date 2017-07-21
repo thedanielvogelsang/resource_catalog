@@ -1,6 +1,6 @@
 <h1>Tell us what assets/resources you are willing to share...</h1>
 
-<%= form_for @sharable do |f| %>
+<%= form_for [@user, @sharable] do |f| %>
   <%= f.label :sharable, "What physical things might you have to offer? (think: \"meeting space\", \"art supplies\", \"that limo i've been holding on to...\")" %>
   <%= f.text_field :sharable %>
   <%= f.submit "offer a resource!" %>
