@@ -1,3 +1,6 @@
+<%= render partial: "shared/errors", locals: { target: @sharable } %>
+<br/><br/>
+
 <h1>Tell us what assets/resources you are willing to share...</h1>
 
 <%= form_for [@user, @sharable] do |f| %>

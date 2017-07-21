@@ -23,6 +23,7 @@ RSpec.feature "User creates new account" do
       fill_in "Zipcode", with: 80216
       fill_in "user[phone]", with: 3162000000
       fill_in "user[email]", with: "example@gmail.com"
+      fill_in "user[username]", with: "DVOG"
       fill_in "Password", with: "password"
       fill_in "user[password_confirmation]", with: "NOTpassword"
       click_on "Create User"
@@ -39,6 +40,7 @@ RSpec.feature "User creates new account" do
       fill_in "Zipcode", with: 80216
       fill_in "user[phone]", with: 3162000000
       fill_in "user[email]", with: "example@gmail.com"
+      fill_in "user[username]", with: "DVOG"
       fill_in "Password", with: "thepassword"
       fill_in "user[password_confirmation]", with: "thepassword"
       click_on "Create User"

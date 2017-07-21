@@ -7,12 +7,16 @@ class SkillsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @skill = Skill.new(skill_params)
-    if @skill.save
+    if @skill.save && @user.skills.count == 2
       @user.skills << @skill
-      flash[:success] = "nice! we didn't know you could do that!"
+      flash[:success] = "Alright that'll do for now. Well done. Continue adding if you'd like, but feel free to move on if you're ready. There'll be more chances to add skills later.."
+      redirect_to user_skills_path(@user)
+    elsif @skill.save
+      @user.skills << @skill
+      flash[:success] = "Fantastic! We didn't know you could do that! What else you got?"
       redirect_to user_skills_path(@user)
     else
-      flash[:error] = "invalid skill"
+      flash[:error] = "invalid skill... can't move on without listing at least three!"
       redirect_to new_user_skill_path(@user)
     end
   end

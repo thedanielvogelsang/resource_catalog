@@ -1,3 +1,6 @@
+<%= render partial: "shared/errors", locals: { target: @user } %>
+<br/><br/>
+
 <%= form_for @user do |f|%>
 
 <%= f.label :first_name %>
@@ -17,6 +20,9 @@
 
 <%= f.label :zipcode %>
 <%= f.number_field :zipcode %>
+
+<%= f.label :username %>
+<%= f.text_field :username %>
 
 <%= f.label :password %>
 <%= f.text_field :password %>

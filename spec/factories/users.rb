@@ -1,5 +1,8 @@
 FactoryGirl.define do
   factory :user do
+    sequence :username do |i|
+      "DVOG#{i}"
+    end
     first_name "MyString"
     last_name "MyString"
     phone 1

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "You're in!"
+      flash[:success] = "User data success."
       redirect_to new_user_skill_path(@user)
     else
       flash[:error] = "Unsuccessful User Creation"
@@ -14,9 +14,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :phone, :email, :address, :zipcode, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :phone, :email, :address, :zipcode, :password, :password_confirmation, :username)
   end
 end

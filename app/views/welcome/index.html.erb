@@ -7,11 +7,11 @@
       <div class="modal-dialog">
   				<div class="loginmodal-container">
   					<h1>Login to Your Account</h1><br>
-  				  <form>
-    					<input id="user" type="text" name="user" placeholder="Username">
-    					<input id="password" type="password" name="pass" placeholder="Password">
+  				  <%= form_tag "/sessions" do %>
+    					<input id="user" type="text" name="session[username]" placeholder="Username">
+    					<input id="password" type="password" name="session[password]" placeholder="Password">
     					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
-  				  </form>
+  				  <% end %>
 
   				  <div class="login-help">
   					<a href="users#new">Register</a> - <a href="#">Forgot Password</a>

@@ -7,6 +7,7 @@ class User < ApplicationRecord
                         :zipcode,
                         :password, confirmation: true
                         :password_confirmation
+  validates :username, presence: true, uniqueness: true
   has_many :user_skills
   has_many :skills, through: :user_skills
   has_many :user_sharables

@@ -1,4 +1,4 @@
-<h1>Tell us what assets/resources you have...</h1>
+<h1>Tell us what other assets/resources you have...</h1>
 <div class="added_skills">
 <% @user.sharables.each do |sharable| %>
  <p><%= sharable.sharable %></p>
@@ -9,4 +9,4 @@
   <%= f.text_field :sharable %>
   <%= f.submit "offer a resource!" %>
 <% end %>
-<%= link_to "finish comre-cat sign-up", user_path(@user) %>
+<%= link_to "complete sign-up", user_path(@user) %>
