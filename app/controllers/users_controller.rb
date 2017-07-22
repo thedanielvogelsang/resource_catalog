@@ -16,6 +16,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if @user == current_user
+      render :show
+    else
+      redirect_to "public/404"
+    end
   end
 
   private

@@ -5,7 +5,7 @@
 <% end %>
 </div>
 <%= form_for [@user, @skill] do |f| %>
-  <%= f.label :skill, "What are you good at?" %>
+  <%= f.label :skill, "What else?" %>
   <%= f.text_field :skill %>
   <%= f.submit "add a skill!" %>
 <% end %>

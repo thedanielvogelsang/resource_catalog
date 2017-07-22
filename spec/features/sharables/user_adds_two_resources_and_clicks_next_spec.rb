@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.feature "user adds three new resources and clicks next" do
-    context "correctly" do
-      scenario "and sees both on the screen" do
+    context "when they're not logged in" do
+      scenario "and sees a 404 page" do
         user = create(:user)
         skill1, skill2, skill3 = create_list(:skill, 3)
         user.skills << skill1
@@ -20,7 +20,7 @@ RSpec.feature "user adds three new resources and clicks next" do
         expect(page).to have_content "asset 2"
         expect(page).to have_content "asset 3"
         click_on "complete sign-up"
-        expect(page).to have_content(user.first_name)
+        expect(page).to have_content("The page you were looking for doesn't exist")
       end
     end
   end

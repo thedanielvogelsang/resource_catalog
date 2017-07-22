@@ -5,7 +5,7 @@
 <% end %>
 </div>
 <%= form_for [@user, @sharable] do |f| %>
-  <%= f.label :sharable, "What physical things might you have to offer?" %>
+  <%= f.label :sharable, "What else might you like to share?" %>
   <%= f.text_field :sharable %>
   <%= f.submit "offer a resource!" %>
 <% end %>
