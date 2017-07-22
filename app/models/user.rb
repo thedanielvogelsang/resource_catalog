@@ -12,4 +12,6 @@ class User < ApplicationRecord
   has_many :skills, through: :user_skills
   has_many :user_sharables
   has_many :sharables, through: :user_sharables
+  has_many :user_communities
+  has_many :communities, through: :user_communities
 end

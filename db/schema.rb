@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721220112) do
+ActiveRecord::Schema.define(version: 20170722234022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "communities", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "sharables", force: :cascade do |t|
     t.text "sharable"
@@ -25,6 +32,15 @@ ActiveRecord::Schema.define(version: 20170721220112) do
     t.text "skill"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_communities", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "community_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["community_id"], name: "index_user_communities_on_community_id"
+    t.index ["user_id"], name: "index_user_communities_on_user_id"
   end
 
   create_table "user_sharables", force: :cascade do |t|
@@ -59,6 +75,8 @@ ActiveRecord::Schema.define(version: 20170721220112) do
     t.string "username"
   end
 
+  add_foreign_key "user_communities", "communities"
+  add_foreign_key "user_communities", "users"
   add_foreign_key "user_sharables", "sharables"
   add_foreign_key "user_sharables", "users"
   add_foreign_key "user_skills", "skills"
