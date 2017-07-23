@@ -44,6 +44,9 @@ RSpec.feature "User creates new account" do
       fill_in "Password", with: "thepassword"
       fill_in "user[password_confirmation]", with: "thepassword"
       click_on "Create User"
+      fill_in "session[username]", with: "DVOG"
+      fill_in "session[password]", with: "thepassword"
+      click_on "Login"
       expect(page).to have_content("Tell us what skills you have...")
     end
   end

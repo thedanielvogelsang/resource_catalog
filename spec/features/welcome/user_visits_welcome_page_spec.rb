@@ -13,6 +13,10 @@ RSpec.feature "user visits welcome page and clicks 'sign up!'" do
 
   scenario "and clicks login" do
     user = create(:user, username: "username", password: "password", password_confirmation: "password")
+    skill1, skill2, skill3 = create_list(:skill, 3)
+    user.skills << skill1
+    user.skills << skill2
+    user.skills << skill3
     visit ('/')
     expect(page).to have_content('ComRe-Cat')
     expect(page).to have_link('Login')

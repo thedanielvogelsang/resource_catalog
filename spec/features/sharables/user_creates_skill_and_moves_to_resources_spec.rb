@@ -4,7 +4,8 @@ RSpec.feature "user adds new skill and clicks 'next'" do
     context "correctly" do
       scenario "and sees the assets/resources page" do
         user = create(:user)
-        visit new_user_skill_path(user)
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+        visit  user_create_skills_path(user)
         fill_in "skill[skill]", with: "new skill"
         click_on "add a skill!"
 

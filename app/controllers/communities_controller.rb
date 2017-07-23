@@ -10,6 +10,7 @@ class CommunitiesController < ApplicationController
     @community = Community.new(community_params)
     if @community.save
       Admin.create(user: @user, community: @community)
+      @user.communities << @community
       redirect_to community_path @community
     else
       render :new
@@ -29,9 +30,9 @@ class CommunitiesController < ApplicationController
     def check_status
       @user = current_user
       @community = Community.find(params[:id])
-      if Admin.find_by(user: @user).community == @community
+      if Community.joins(:admins).where(admins: {user_id: @user.id}).include? @community
         @user.role = 1
-      elsif @user.communties.include?(@community)
+      elsif @user.communities.include?(@community)
       else
         render "/shared/404"
       end

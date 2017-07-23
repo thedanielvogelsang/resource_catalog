@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   resources :users, only: [:new, :create, :show] do
-    resources :skills, only: [:new, :create, :index]
-    resources :sharables, only: [:new, :create, :index]
+    get '/create-skills', to: "skills#new"
+    get '/create-sharables', to: "sharables#new"
+    resources :skills, only: [:create, :index]
+    resources :sharables, only: [:create, :index]
   end
   resources :sessions, only: [:new, :create, :destroy]
   delete '/logout', to: "sessions#destroy"
+  get '/login', to: "sessions#new"
   resources :users do
     resources :communities, only: [:new, :create, :destroy]
   end
   resources :communities, only: [:show]
+
 end

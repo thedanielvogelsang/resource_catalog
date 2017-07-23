@@ -1,6 +1,6 @@
 class SkillsController < ApplicationController
-  before_action :check_user
-  
+  before_action :check_user, only: [:index]
+
   def new
     @user = User.find(params[:user_id])
     @skill = Skill.new()
@@ -19,7 +19,7 @@ class SkillsController < ApplicationController
       redirect_to user_skills_path(@user)
     else
       flash[:error] = "invalid skill... can't move on without listing at least three!"
-      redirect_to new_user_skill_path(@user)
+      redirect_to user_create_skills_path(@user)
     end
   end
 

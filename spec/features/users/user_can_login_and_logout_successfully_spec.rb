@@ -4,6 +4,10 @@ RSpec.feature "user visits welcome page" do
   context "and logs in with real credentials" do
     scenario "and is taken to their own profile page" do
       user = create(:user, username: "username", password: "password", password_confirmation: "password")
+      skill1, skill2, skill3 = create_list(:skill, 3)
+      user.skills << skill1
+      user.skills << skill2
+      user.skills << skill3
       visit('/')
       click_link("Login")
       find("#user", :visible => false).set "username"
@@ -16,6 +20,10 @@ RSpec.feature "user visits welcome page" do
   context "and logs in then logs out" do
     scenario "and is taken back to the home welcome screen" do
       user = create(:user, username: "username", password: "password", password_confirmation: "password")
+      skill1, skill2, skill3 = create_list(:skill, 3)
+      user.skills << skill1
+      user.skills << skill2
+      user.skills << skill3
       visit('/')
       click_link("Login")
       find("#user", :visible => false).set "username"

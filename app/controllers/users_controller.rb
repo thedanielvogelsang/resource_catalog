@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :check_user, only: [:show]
   def new
     @user = User.new()
   end
@@ -6,8 +7,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "User data success."
-      redirect_to new_user_skill_path(@user)
+      flash[:success] = "User data success. Now log in"
+      redirect_to login_path
     else
       flash[:error] = "Unsuccessful User Creation"
       redirect_to new_user_path

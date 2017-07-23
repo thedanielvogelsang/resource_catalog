@@ -3,6 +3,10 @@ require 'rails_helper'
 RSpec.feature "user creates a new community from their profile page" do
   scenario "and sees the info they entered on a community show page" do
     user = create(:user, username: "username", password: "password", password_confirmation: "password")
+    skill1, skill2, skill3 = create_list(:skill, 3)
+    user.skills << skill1
+    user.skills << skill2
+    user.skills << skill3
     visit ('/')
     expect(page).to have_content('ComRe-Cat')
     expect(page).to have_link('Login')

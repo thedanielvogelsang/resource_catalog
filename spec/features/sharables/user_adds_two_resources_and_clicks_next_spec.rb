@@ -8,7 +8,7 @@ RSpec.feature "user adds three new resources and clicks next" do
         user.skills << skill1
         user.skills << skill2
         user.skills << skill3
-        visit new_user_sharable_path(user)
+        visit user_create_sharables_path(user)
         fill_in "sharable[sharable]", with: "asset 1"
         click_on "offer a resource!"
         fill_in "sharable[sharable]", with: "asset 2"
