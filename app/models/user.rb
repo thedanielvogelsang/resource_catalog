@@ -14,4 +14,5 @@ class User < ApplicationRecord
   has_many :sharables, through: :user_sharables
   has_many :user_communities
   has_many :communities, through: :user_communities
+  enum role: %w(default member admin)
 end

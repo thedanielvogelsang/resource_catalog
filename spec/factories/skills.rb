@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :skill do
-    skill "MyText"
+    skill "MySkill"
   end
 end
