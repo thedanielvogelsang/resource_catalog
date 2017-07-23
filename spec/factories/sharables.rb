@@ -1,5 +1,7 @@
 FactoryGirl.define do
   factory :sharable do
-    sharable "MyText"
+    sequence :sharable do |i|
+       "#{i}MyText"
+     end
   end
 end

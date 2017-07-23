@@ -2,15 +2,21 @@
 <h1>Hello <%= @user.first_name %>!</h1>
 
 <div>
-<div class="skillsets">
-  <ul><% @user.skills.each do |skill| %>
-  <li><%= skill.skill %></li>
-  <% end %></ul>
+  <div class="skillsets">
+    <ul><% @user.skills.each do |skill| %>
+    <li><%= skill.skill %></li>
+    <% end %></ul>
+  </div>
+
+  <div class="sharables">
+    <ul><% @user.sharables.each do |thing| %>
+    <li><%= thing.sharable %></li>
+    <% end %></ul>
+  </div>
 </div>
 
-<div class="sharables">
-  <ul><% @user.sharables.each do |thing| %>
-  <li><%= thing.sharable %></li>
-  <% end %></ul>
-</div>
 <div>
+  <% @user.communities.each do |community| %>
+  <div> <%= link_to community.name, community_path(community)%> </div>
+  <% end %>
+</div>
