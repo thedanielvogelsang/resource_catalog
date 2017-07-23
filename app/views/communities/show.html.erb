@@ -13,3 +13,23 @@
   <li><%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %></li>
   <% end %>
 </ul>
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;" id="delete-modal">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+          <h1>Are you sure you want to delete <%= @community.name %>?</h1>
+          <p>(This cannot be undone)</p><br>
+          <%= form_tag "/communities" do %>
+          <form class="delete-community-button" action="/communities/<%= @community.id %>" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" id="delete-confirmation" value="Yes I'm sure">
+          </form>
+          <%= link_to "cancel" %>
+          <% end %>
+        </div>
+    </div>
+</div>
+
+<div><% if current_user.admin? %>
+  <%= link_to "edit community details", edit_community_path(@community) %>
+  <a href="#" data-toggle="modal" data-target="#delete-modal">delete community</a>
+<% end %><div>

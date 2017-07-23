@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   delete '/logout', to: "sessions#destroy"
   get '/login', to: "sessions#new"
   resources :users do
-    resources :communities, only: [:new, :create, :destroy]
+    resources :communities, only: [:new, :create]
   end
-  resources :communities, only: [:show]
+  resources :communities, only: [:show, :destroy, :edit, :update]
 
 end
