@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :sharables, only: [:new, :create, :index]
   end
   resources :sessions, only: [:new, :create, :destroy]
+  delete '/logout', to: "sessions#destroy"
 end
