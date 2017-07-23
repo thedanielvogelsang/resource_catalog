@@ -14,6 +14,6 @@ class User < ApplicationRecord
   has_many :sharables, through: :user_sharables
   has_many :user_communities
   has_many :communities, through: :user_communities
-  has_many :admins
+  has_many :admins, :dependent => :destroy
   enum role: %w(default admin)
 end
