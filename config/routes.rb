@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show] do
     get '/create-skills', to: "skills#new"
     get '/create-sharables', to: "sharables#new"
+    get '/searchboard', to: "searchboard#index"
     resources :skills, only: [:create, :index]
     resources :sharables, only: [:create, :index]
   end
