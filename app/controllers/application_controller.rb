@@ -7,4 +7,11 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def check_user
+    @user = User.find(params[:user_id])
+    if @user == current_user
+    else
+      render "shared/404"
+    end
+  end
 end

@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     if @user == current_user
       render :show
     else
-      redirect_to "public/404"
+      render "shared/404"
     end
   end
 

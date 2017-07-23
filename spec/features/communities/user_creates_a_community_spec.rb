@@ -25,6 +25,5 @@ RSpec.feature "user creates a new community from their profile page" do
     expect(page).to have_content "info about this community"
     expect(page).to have_content user.username
     expect(page).to have_content "Posts"
-  
   end
 end

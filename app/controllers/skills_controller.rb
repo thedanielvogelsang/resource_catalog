@@ -1,4 +1,6 @@
 class SkillsController < ApplicationController
+  before_action :check_user
+  
   def new
     @user = User.find(params[:user_id])
     @skill = Skill.new()

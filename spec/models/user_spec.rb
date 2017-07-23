@@ -5,20 +5,10 @@ describe User do
     user = create(:user, username: "penelope",
                          password: "boom",
                          password_confirmation: "boom",
-                         role: 2)
+                         role: 1)
 
     expect(user.role).to eq("admin")
     expect(user.admin?).to be_truthy
-  end
-
-  it "can be created as a member" do
-    user = create(:user, username: "penelope",
-                         password: "boom",
-                         password_confirmation: "boom",
-                         role: 1)
-
-    expect(user.role).to eq("member")
-    expect(user.member?).to be_truthy
   end
 
   it "can be created as a default user" do
