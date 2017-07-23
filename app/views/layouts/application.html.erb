@@ -12,9 +12,9 @@
     <% flash.each do |type, message| %>
     <%= content_tag :div, message, class: "flash_#{type}" %>
     <% end %>
-
-    <%= link_to "Logout", logout_path, method: :delete %>
-
+    <% if current_user %>
+      <%= link_to "Logout", logout_path, method: :delete %>
+    <% end %>
     <%= yield %>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
