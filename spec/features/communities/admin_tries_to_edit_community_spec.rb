@@ -19,7 +19,7 @@ RSpec.feature "admin tries to edit community" do
       click_on("edit community details")
 
       expect(current_path).to eq(edit_community_path(community1))
-      save_and_open_page
+
       fill_in "community[name]", with: "New name"
       fill_in "community[description]", with: "New description"
       click_on "Update Community"
@@ -47,7 +47,7 @@ RSpec.feature "admin tries to edit community" do
       click_on("edit community details")
 
       expect(current_path).to eq(edit_community_path(community1))
-      save_and_open_page
+    
       fill_in "community[name]", with: "New name"
       fill_in "community[description]", with: nil
       click_on "Update Community"

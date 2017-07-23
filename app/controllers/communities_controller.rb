@@ -27,7 +27,7 @@ class CommunitiesController < ApplicationController
     @community = Community.find(params[:id])
     if @user.admin?
     else
-      redirect_to community_path(@community)
+      render "shared/404"
     end
   end
 
