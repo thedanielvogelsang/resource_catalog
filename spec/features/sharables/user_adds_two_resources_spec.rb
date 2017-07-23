@@ -8,6 +8,7 @@ RSpec.feature "user adds two new resources" do
         user.skills << skill1
         user.skills << skill2
         user.skills << skill3
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
         visit user_create_sharables_path(user)
         fill_in "sharable[sharable]", with: "asset 1"
         click_on "offer a resource!"

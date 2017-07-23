@@ -8,6 +8,7 @@ RSpec.feature "user adds three new resources and clicks next" do
         user.skills << skill1
         user.skills << skill2
         user.skills << skill3
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
         visit user_create_sharables_path(user)
         fill_in "sharable[sharable]", with: "asset 1"
         click_on "offer a resource!"
@@ -20,7 +21,7 @@ RSpec.feature "user adds three new resources and clicks next" do
         expect(page).to have_content "asset 2"
         expect(page).to have_content "asset 3"
         click_on "complete sign-up"
-        expect(page).to have_content("The page you were looking for doesn't exist")
+        expect(page).to have_content("Hello #{user.first_name}")
       end
     end
   end
