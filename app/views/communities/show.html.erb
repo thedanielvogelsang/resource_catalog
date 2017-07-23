@@ -1,0 +1,15 @@
+<h1><%= @community.name %></h1>
+
+<h2>info about this community</h2>
+<h3><%= @community.description %></h3><br/>
+<h4>Community Admin(s): <% @community.admins.each do |admin| %></h4>
+<p><%= admin.user.username %></p>
+<% end %>
+<div>
+<h2> Posts: </h4>
+</div>
+<ul>
+  <% @community.users.each do |user| %>
+  <li><%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %></li>
+  <% end %>
+</ul>
