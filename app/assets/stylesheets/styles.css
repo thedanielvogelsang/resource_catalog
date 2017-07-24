@@ -7,6 +7,7 @@
   width: 100% !important;
   background-color: #F7F7F7;
   margin: 0 auto;
+  margin-top: 100px;
   border-radius: 2px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   overflow: hidden;
@@ -93,4 +94,33 @@
 
 .login-help{
   font-size: 12px;
+}
+
+/****** WELCOME SCREEN ******/
+.sign-up-row{
+  margin-top: 50px;
+}
+
+.sign-in-button{
+  text-decoration: underline;
+}
+
+.new-comm-btn {
+  height: 80px;
+  padding: 10px;
+  position: absolute;
+  background:#2C3E50;
+  color:#fff;
+  margin-left: 60px;
+  margin-top: 150px;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+#about {
+  padding-top: 0;
+}
+
+#skillset {
+  padding-top: 120px;
 }

@@ -1,3 +1,5 @@
+<body>
+<section>
 <%= form_for [@user, @community] do |f| %>
 
 <%= f.label :community_name %>
@@ -6,3 +8,5 @@
 <%= f.text_field :description %>
 <%= f.submit "Create Community" %>
 <% end %>
+</section>
+</body>

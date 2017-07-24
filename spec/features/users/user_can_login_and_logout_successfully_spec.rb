@@ -30,9 +30,11 @@ RSpec.feature "user visits welcome page" do
       find("#password", :visible => false).set "password"
       find(".loginmodal-submit", :visible => false).click
       expect(page).to have_content "Hello #{user.first_name}!"
-      click_link("Logout")
+      within("//li.logout") do
+        click_link "Logout"
+      end
       refute page.has_content?("Hello #{user.first_name}!")
-      expect(page).to have_content("ComRe-Cat")
+      expect(page).to have_content("ComreCat")
     end
   end
 end

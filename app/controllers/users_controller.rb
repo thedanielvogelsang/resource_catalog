@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   before_action :check_user, only: [:show]
   before_action :clear_status, only: [:show]
 

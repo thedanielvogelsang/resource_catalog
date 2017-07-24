@@ -10,7 +10,7 @@ RSpec.feature "user can visit dashboard" do
       user2.communities << community
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
-      visit("users/user1.id/searchboard")
+      visit("users/#{user1.id}/searchboard")
       expect(page).to have_css("")
       expect(page).to have_content(user2.skills.first)
       expect(page).to have_content(user2.skills.last)

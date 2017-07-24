@@ -1,34 +1,127 @@
-<%= render partial: "shared/errors", locals: { target: @user } %>
-<br/><br/>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<%= form_for @user do |f|%>
 
-<%= f.label :first_name %>
-<%= f.text_field :first_name %>
+		<!-- Website CSS style -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
 
-<%= f.label :last_name %>
-<%= f.text_field :last_name %>
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		<link rel="stylesheet" href="style.css">
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
-<%= f.label :email_address %>
-<%= f.text_field :email %>
+		<title>ComreCat Sign-up</title>
+	</head>
+	<body>
+    <div>
+      <%= link_to("<<BACK", :root, :class => "btn btn-basic") %>
+    </div>
+		<div class="container">
+			<div class="row main">
+				<div class="main-login main-center">
+				<h5>Create a User Account by filling out this form. Most of this information is for just us, but your email, username, and first and last name will be public!</h5>
+					<%= form_for [@user] do |f| %>
 
-<%= f.label :phone_number %>
-<%= f.text_field :phone %>
+						<div class="form-group">
+							<%= f.label(:first_name, :class => "cols-sm-2 control-label")%>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<%= f.text_field(:first_name, :class => "form-control", :name => "user[first_name]", :id => "name",  :placeholder => "Enter your First Name")%>
+								</div>
+							</div>
+						</div>
+            <div class="form-group">
+              <%= f.label(:last_name, :class => "cols-sm-2 control-label")%>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <%= f.text_field(:last_name, :class => "form-control", :name => "user[last_name]", :id => "name",  :placeholder => "Enter your Last Name")%>
+                </div>
+              </div>
+            </div>
 
-<%= f.label :address, "Address, City, State" %>
-<%= f.text_field :address %>
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Your Email</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="user[email]" id="email"  placeholder="Enter your Email"/>
+								</div>
+							</div>
+						</div>
 
-<%= f.label :zipcode %>
-<%= f.number_field :zipcode %>
+            <div class="form-group">
+							<label for="phone" class="cols-sm-2 control-label">Your Phonenumber</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="user[phone]" id="phone"  placeholder="Enter your Phone Number"/>
+								</div>
+							</div>
+						</div>
+            <div class="form-group">
+							<label for="phone" class="cols-sm-2 control-label">Your Address</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-archive" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="user[address]" id="address"  placeholder="Enter your full address, minus zip"/>
+								</div>
+							</div>
+						</div>
+            <div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Zipcode</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-arrows fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="user[zipcode]" id="zipcode"  placeholder="Enter your Zipcode"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-diamond fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="user[username]" id="username"  placeholder="Enter your Username"/>
+								</div>
+							</div>
+						</div>
 
-<%= f.label :username %>
-<%= f.text_field :username %>
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="user[password]" id="password"  placeholder="Enter your Password"/>
+								</div>
+							</div>
+						</div>
 
-<%= f.label :password %>
-<%= f.text_field :password %>
-<%= f.label :confirm_password %>
-<%= f.text_field :password_confirmation %>
+						<div class="form-group">
+							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="user[password_confirmation]" id="confirm"  placeholder="Confirm your Password"/>
+								</div>
+							</div>
+						</div>
+            <div class="form-group">
+              <%= f.submit :class => "btn btn-primary btn-lg btn-block login-button" %>
+						</div>
+          <% end %>
+				</div>
+			</div>
+		</div>
 
-<%= f.submit %>
-
-<% end %>
+		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

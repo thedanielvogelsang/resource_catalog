@@ -1,22 +1,111 @@
-<a href="/users/<%= @user.id %>/communities/new" class="btn btn-info" role="button">Form a new Community</a>
-<h1>Hello <%= @user.first_name %>!</h1>
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
 
-<div>
-  <div class="skillsets">
-    <ul><% @user.skills.each do |skill| %>
-    <li><%= skill.skill %></li>
-    <% end %></ul>
-  </div>
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
 
-  <div class="sharables">
-    <ul><% @user.sharables.each do |thing| %>
-    <li><%= thing.sharable %></li>
-    <% end %></ul>
-  </div>
-</div>
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">Hello <%= @user.first_name %>!</a>
+            </div>
 
-<div>
-  <% @user.communities.each do |community| %>
-  <div> <%= link_to community.name, community_path(community)%> </div>
-  <% end %>
-</div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#skillset">Skills/Assets</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#communities">Communities</a>
+                    </li>
+                    <li lass="page-scroll">
+                      <%= link_to "Logout", logout_path, method: :delete %>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+<body>
+  <!-- Header -->
+  <section id="about">
+    <a href="/users/<%= @user.id %>/communities/new" class="btn btn-info new-comm-btn" role="button"><h3>Form a new Community</h3></a>
+    <header>
+      <div class="container" id="maincontent" tabindex="-1">
+          <div class="row">
+              <div class="col-lg-12">
+                  <%= image_tag("profile.png", :class => "img-responsive") %>
+                  <div class="intro-text">
+                      <h1 class="name"><%= @user.first_name.upcase %> <%= @user.last_name.upcase %></h1>
+                      <hr class="star-light">
+                      <span class="skills"><%= @user.email %> - <%= @user.username %> - <%= @user.zipcode %></span>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </header>
+  </section>
+  <section id="skillset">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2>Skills/Assets</h2>
+        <hr class="star-primary">
+    </div>
+    <div class="container skillshare-container">
+      <div class="row skillshare">
+        <div class="skillsets col-md-6 text-center">
+          <% @user.skills.each do |skill| %>
+          <h3 class="skillset-word"><%= skill.skill %></h3>
+          <% end %>
+        </div>
+
+        <div class="skillsets col-md-6 text-center">
+          <% @user.sharables.each do |thing| %>
+          <h3 class="skillset-word"><%= thing.sharable %></h3>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="communities">
+    <div class="container user-communities">
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <h2>Communities</h2>
+              <hr class="star-primary">
+          </div>
+      </div>
+      <div class="row">
+        <% if @user.communities.count == 0 %>
+          <br>
+          <div class="text-center"><h3>...NO COMMUNITIES YET :( </h3></div>
+          <br>
+        <% else %>
+          <% @user.communities.each do |community| %>
+            <div class="col-md-3 community-item text-center"> <h3><%= link_to community.name, community_path(community)%></h3>
+            <a href="#communityModal1" class="community-link" data-toggle="modal">
+              <div class="caption">
+                  <div class="caption-content">
+                      <i class="fa fa-search-plus fa-3x"></i>
+                  </div>
+              </div>
+              <%= image_tag("portfolio/cabin.png", :class => "img-responsive", :alt => "Cabin") %>
+            </a>
+            </div>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</body>
