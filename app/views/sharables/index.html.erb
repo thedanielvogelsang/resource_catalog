@@ -1,3 +1,7 @@
+<body class="background-theme">
+<div>
+  <%= link_to("<<Back to Skills", user_skills_path(@user), :class => "btn btn-basic")%>
+</div>
 <h1>Tell us what other assets/resources you have...</h1>
 <div class="added_skills">
 <% @user.sharables.each do |sharable| %>
@@ -10,3 +14,4 @@
   <%= f.submit "offer a resource!" %>
 <% end %>
 <%= link_to "complete sign-up", user_path(@user) %>
+<body>

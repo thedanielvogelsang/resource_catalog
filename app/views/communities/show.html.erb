@@ -1,3 +1,8 @@
+
+<% if current_user %>
+<%= render "/layouts/navbar" %>
+<% end %>
+<body class="background-theme">
 <h1><%= @community.name %></h1>
 
 <h2>info about this community</h2>
@@ -33,3 +38,4 @@
   <%= link_to "edit community details", edit_community_path(@community) %>
   <a href="#" data-toggle="modal" data-target="#delete-modal">delete community</a>
 <% end %><div>
+</body>

@@ -1,3 +1,7 @@
+<body class="background-theme">
+<div>
+  <%= link_to "<<Back to User info", edit_user_path(@user) %>
+</div>
 <h1>Tell us what other skills you have...</h1>
 <div class="added_skills">
 <% @user.skills.each do |skill| %>
@@ -10,3 +14,4 @@
   <%= f.submit "add a skill!" %>
 <% end %>
 <%= link_to "next", user_create_sharables_path(@user) %>
+</body>

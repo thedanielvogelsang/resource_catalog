@@ -1,8 +1,18 @@
-<%= form_for [@community] do |f| %>
+<body class="background-theme">
+  <% if current_user %>
+  <%= render "/layouts/navbar" %>
+  <% end %>
+  <div>
+    <%= form_for [@community] do |f| %>
 
-<%= f.label :change_name %>
-<%= f.text_field :name %>
-<%= f.label :update_description %>
-<%= f.text_field :description %>
-<%= f.submit "Update Community" %>
-<% end %>
+    <%= f.label :change_name %>
+    <%= f.text_field :name %>
+    <%= f.label :update_description %>
+    <%= f.text_field :description %>
+    <%= f.submit "Update Community" %>
+    <% end %>
+    <div class="cancel-close">
+      <%= link_to "cancel", user_path(@user) %>
+    </div>
+  </div>
+</body>

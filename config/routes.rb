@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get '/create-skills', to: "skills#new"
     get '/create-sharables', to: "sharables#new"
     get '/searchboard', to: "searchboard#index"
+    get '/searchboard', to: "searchboard#find"
     resources :skills, only: [:create, :index]
     resources :sharables, only: [:create, :index]
   end
@@ -14,5 +15,5 @@ Rails.application.routes.draw do
     resources :communities, only: [:new, :create]
   end
   resources :communities, only: [:show, :destroy, :edit, :update]
-
+  get '/searchboard', to: "searchboard#find"
 end

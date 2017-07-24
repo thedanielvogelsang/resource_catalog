@@ -1,4 +1,7 @@
-<body>
+<% if current_user %>
+<%= render "/layouts/navbar" %>
+<% end %>
+<body class="background-theme">
 <section>
 <%= form_for [@user, @community] do |f| %>
 
@@ -8,5 +11,8 @@
 <%= f.text_field :description %>
 <%= f.submit "Create Community" %>
 <% end %>
+<div class="cancel-close">
+  <%= link_to "cancel", user_path(@user) %>
+</div>
 </section>
 </body>
