@@ -2,14 +2,14 @@
 <%= render "/layouts/navbar" %>
 <% end %>
 <body class="background-theme">
-<section>
+<section id="community-form">
 <%= form_for [@user, @community] do |f| %>
 
-<%= f.label :community_name %>
-<%= f.text_field :name %>
-<%= f.label :description, "Tell us about your community." %>
-<%= f.text_field :description %>
-<%= f.submit "Create Community" %>
+<%= f.label :community_name %><br>
+<%= f.text_field(:name, {:class => "input-comm-name"})%><br>
+<%= f.label :description, "Tell us about your community." %><br>
+<%= f.text_field(:description, {:class => "input-comm-desc"})%><br>
+<%= f.submit "Create Community", :class => "submit-button" %>
 <% end %>
 <div class="cancel-close">
   <%= link_to "cancel", user_path(@user) %>

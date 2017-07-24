@@ -1,5 +1,4 @@
 class SearchboardController < ApplicationController
-  layout 'search'
 
   def index
     @user = current_user

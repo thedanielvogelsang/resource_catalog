@@ -9,7 +9,7 @@ RSpec.feature "user creates a new community from their profile page" do
     user.skills << skill3
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     visit ('/')
-    expect(page).to have_content('ComRe-Cat')
+    expect(page).to have_content('ComreCat')
     expect(page).to have_link('Login')
     expect(page).to have_link('Sign-Up')
     click_link("Login")

@@ -122,7 +122,8 @@
 }
 
 #skillset {
-  padding-top: 120px;
+  padding-top: 160px;
+  margin-bottom: 50px;
 }
 
 #bs-example-navbar-collapse-1 {
@@ -131,4 +132,38 @@
 
 body.background-theme {
   background: rgb(24, 184, 153)
+}
+
+.user-communities {
+  margin-top: 80px; 
+}
+
+#community-form {
+  font-size: 2em;
+  text-align: center;
+  align-content: center;
+  margin-top: 20px;
+}
+
+input.input-comm-name{
+  border-radius: 5px;
+  min-height: 30px;
+}
+
+input.input-comm-desc{
+  border-radius: 10px;
+  min-height: 80px;
+  min-width: 50%;
+}
+
+input.submit-button{
+  margin-top: 20px;
+  border-radius: 8px;
+  color:
+}
+
+.subheading {
+  margin-left: -20px;
+  padding-left: -20px;
+  color: white;
 }
